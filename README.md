@@ -1,4 +1,4 @@
-# obi--03--user-management--frontend
+# 03--user-management--frontend
 
 # important!!
 Export `YARN_NODE_LINKER=node-modules` before any invocation of `yarn install/remove`
