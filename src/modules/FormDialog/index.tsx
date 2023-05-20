@@ -21,25 +21,25 @@ export const FormDialog: React.FunctionComponent = () => {
 
   const handleClose = () => setOpen(false);
 
-  const handleChange = (func: (value: string) => void) => func;
-
   const handleSubmit = async () => {
     if (address && birthdate && email && firstName && lastName)
-      await api.userControllerCreate({
-        createUserDto: {
-          address,
-          birthdate,
-          email,
-          firstName,
-          lastName,
-        },
-      });
+      await api
+        .userControllerCreate({
+          createUserDto: {
+            address,
+            birthdate,
+            email,
+            firstName,
+            lastName,
+          },
+        })
+        .catch(console.error);
     else throw Error('some prop(s) missing');
   };
 
   return (
     <div>
-      <Button variant="outlined" onClick={handleClickOpen}>
+      <Button variant="contained" onClick={handleClickOpen}>
         Add user
       </Button>
       <Dialog open={open} onClose={handleClose}>
@@ -49,33 +49,33 @@ export const FormDialog: React.FunctionComponent = () => {
           <TextField
             id="firstName"
             label="first name"
-            onChange={handleChange(setFirstName)}
+            onChange={setFirstName}
             error={!firstName}
           />
           <TextField
             id="lastName"
             label="last name"
-            onChange={handleChange(setLastName)}
+            onChange={setLastName}
             error={!lastName}
           />
           <TextField
             id="email"
             label="email"
             type="email"
-            onChange={handleChange(setEmail)}
+            onChange={setEmail}
             error={!email}
           />
           <TextField
             id="address"
             label="address"
-            onChange={handleChange(setAddress)}
+            onChange={setAddress}
             error={!address}
           />
           <TextField
             id="birthdate"
             label="date of birth"
             type="text"
-            onChange={handleChange(setBirthdate)}
+            onChange={setBirthdate}
             error={!birthdate}
           />
         </DialogContent>

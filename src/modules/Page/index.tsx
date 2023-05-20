@@ -10,12 +10,7 @@ const useStyles = makeStyles()((theme) => {
       flexDirection: 'column',
       minHeight: '100vh',
     },
-    header: {
-      padding: theme.spacing(4, 5),
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'end',
-    },
+
     content: {
       margin: '0 auto 0 auto',
       flex: 1,
