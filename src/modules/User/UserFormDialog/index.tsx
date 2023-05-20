@@ -17,9 +17,9 @@ export const FormDialog: React.FunctionComponent = () => {
   const [address, setAddress] = React.useState<string | null>(null);
   const [birthdate, setBirthdate] = React.useState<string | null>(null);
 
-  const handleClickOpen = () => setOpen(true);
+  const openDialog = () => setOpen(true);
 
-  const handleClose = () => setOpen(false);
+  const closeDialog = () => setOpen(false);
 
   const handleSubmit = async () => {
     if (address && birthdate && email && firstName && lastName)
@@ -35,14 +35,16 @@ export const FormDialog: React.FunctionComponent = () => {
         })
         .catch(console.error);
     else throw Error('some prop(s) missing');
+
+    closeDialog();
   };
 
   return (
     <div>
-      <Button variant="contained" onClick={handleClickOpen}>
+      <Button variant="contained" onClick={openDialog}>
         Add user
       </Button>
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog open={open} onClose={closeDialog}>
         <DialogTitle>New User</DialogTitle>
         <DialogContent>
           <DialogContentText>Enter new user's data</DialogContentText>
@@ -80,7 +82,7 @@ export const FormDialog: React.FunctionComponent = () => {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Close</Button>
+          <Button onClick={closeDialog}>Close</Button>
           <Button
             onClick={handleSubmit}
             disabled={!(address && birthdate && email && firstName && lastName)}
