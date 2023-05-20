@@ -1,4 +1,8 @@
-- [ ] accessibility
-- [ ] theme
+- [ ] aria
+- [x] theme
 - [ ] typography
-- [ ] grid
+- [ ] *grid
+- [ ] *** dockerize 
+- [ ] *** testing!
+- [ ] ** react query
+- [x] ** openapi
