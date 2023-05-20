@@ -21,12 +21,6 @@ const columns: GridColDef[] = [
   { field: 'address', headerName: 'Address', width: 130 },
   { field: 'email', headerName: 'E-mail', width: 130 },
   { field: 'birthdate', headerName: 'Birth date', width: 130 },
-  // {
-  //   field: 'age',
-  //   headerName: 'Age',
-  //   type: 'number',
-  //   width: 90,
-  // },
 ];
 
 export const UserTable: React.FunctionComponent<Props> = ({ users }) => {
@@ -41,7 +35,7 @@ export const UserTable: React.FunctionComponent<Props> = ({ users }) => {
           },
         }}
         pageSizeOptions={[5, 10]}
-        checkboxSelection
+        checkboxSelection={true}
       />
     </div>
   );
