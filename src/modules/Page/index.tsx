@@ -31,7 +31,6 @@ export const Page: React.FunctionComponent<Props> = ({ children }) => {
   const { classes } = useStyles();
   return (
     <div className={classes.root}>
-      <div className={classes.header}>'add new user button placeholder'</div>
       <div className={classes.content}>{children}</div>
       <Footer />
     </div>

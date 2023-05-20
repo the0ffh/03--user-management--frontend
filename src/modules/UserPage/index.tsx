@@ -5,6 +5,7 @@ import api from './api';
 import { ReadUserDto } from '../../../api';
 import { FabAdd } from '../FabAdd';
 import { FabEdit } from '../FabEdit';
+import { FormDialog } from '../FormDialog';
 
 export const UserPage: React.FunctionComponent = () => {
   const [users, setUsers] = React.useState<ReadUserDto[]>();
@@ -16,16 +17,11 @@ export const UserPage: React.FunctionComponent = () => {
     };
 
     fetchUsers();
-  }, []);
-
-  const handleButtonClick = (message: string) => {
-    alert(message);
-  };
+  }, [users]);
 
   return (
     <Page>
-      <FabAdd onClick={() => handleButtonClick('add')} />
-      <FabEdit onClick={() => handleButtonClick('edit')} />
+      <FormDialog />
       {users ? <UserTable users={users} /> : <div>LOADING...</div>}
     </Page>
   );
