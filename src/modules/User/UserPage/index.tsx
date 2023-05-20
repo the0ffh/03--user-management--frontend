@@ -1,12 +1,12 @@
-import { Page } from '../Page';
+import { Page } from '../../core/Page';
 import { UserTable } from '../UserTable';
 import React from 'react';
 import api from './api';
-import { ReadUserDto } from '../../../api';
-import { FormDialog } from '../FormDialog';
+import { ReadUserDto } from '../../../../api';
+import { FormDialog } from '../UserFormDialog';
 import Button from '@mui/material/Button';
 import { makeStyles } from 'tss-react/mui';
-import { Header } from '../Header';
+import { Header } from '../../core/Header';
 
 const useStyles = makeStyles()(() => {
   return {
@@ -25,12 +25,7 @@ export const UserPage: React.FunctionComponent = () => {
   const [users, setUsers] = React.useState<ReadUserDto[]>();
 
   React.useEffect(() => {
-    const fetchUsers = async () => {
-      const result = await api.userControllerFindAll();
-      setUsers(result);
-    };
-
-    fetchUsers();
+    api.userControllerFindAll().then(setUsers).catch(console.error);
   }, [users]);
 
   return (

@@ -1,4 +1,4 @@
-import { Configuration, UserApi } from '../../../../api';
+import { Configuration, UserApi } from '../../../../../api';
 
 /*TODO
  *  use EVN VAR!!!!

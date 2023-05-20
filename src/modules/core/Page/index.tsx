@@ -10,7 +10,6 @@ const useStyles = makeStyles()((theme) => {
       flexDirection: 'column',
       minHeight: '100vh',
     },
-
     content: {
       margin: '0 auto 0 auto',
       flex: 1,

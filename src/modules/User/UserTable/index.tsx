@@ -1,5 +1,5 @@
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
-import { ReadUserDto } from '../../../api';
+import { ReadUserDto } from '../../../../api';
 import React from 'react';
 
 interface Props {
