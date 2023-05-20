@@ -1,0 +1,10 @@
+- [ ] aria
+- [x] theme
+- [ ] *grid
+- [ ] ** dockerize 
+- [ ] *** testing!
+- [ ] *** react query
+- [x] ** openapi
+- [ ] add storybook
+- [ ] *** add react hook form
+  -  ref https://react-hook-form.com/
