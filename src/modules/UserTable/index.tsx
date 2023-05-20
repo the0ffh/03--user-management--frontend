@@ -29,13 +29,13 @@ interface Data {
   protein: number;
 }
 
-function createData(
+const createData = (
   name: string,
   calories: number,
   fat: number,
   carbs: number,
   protein: number,
-): Data {
+): Data => {
   return {
     name,
     calories,
@@ -43,7 +43,7 @@ function createData(
     carbs,
     protein,
   };
-}
+};
 
 const rows = [
   createData('Cupcake', 305, 3.7, 67, 4.3),
