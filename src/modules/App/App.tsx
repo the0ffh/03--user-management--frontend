@@ -3,7 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from '../theme';
 import { CssBaseline } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
-import { Page } from '../Page';
+import { UserPage } from '../UserPage';
 
 /*
  * mui tss react
@@ -29,7 +29,7 @@ const App: React.FunctionComponent = () => {
       <ThemeProvider theme={theme}>
         <div className={classes.root}>
           <CssBaseline />
-          <Page />
+          <UserPage />
         </div>
       </ThemeProvider>
     </React.StrictMode>
