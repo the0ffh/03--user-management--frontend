@@ -28,6 +28,10 @@ export const UserPage: React.FunctionComponent = () => {
     api.userControllerFindAll().then(setUsers).catch(console.error);
   }, [users]);
 
+  const handleDelete = async (userId: number) => {
+    await api.userControllerRemove({ id: userId });
+  };
+
   return (
     <Page>
       <Header>
@@ -37,7 +41,11 @@ export const UserPage: React.FunctionComponent = () => {
           <Button variant="outlined">delete</Button>
         </div>
       </Header>
-      {users ? <UserTable users={users} /> : <div>LOADING...</div>}
+      {users ? (
+        <UserTable users={users} onDeleteClick={handleDelete} />
+      ) : (
+        <div>LOADING...</div>
+      )}
     </Page>
   );
 };
