@@ -275,8 +275,9 @@ export const UserTable: React.FunctionComponent = () => {
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
-  // @ts-ignore
   const handleRequestSort = (
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
     event: React.MouseEvent<unknown>,
     property: keyof Data,
   ) => {
@@ -294,6 +295,7 @@ export const UserTable: React.FunctionComponent = () => {
     setSelected([]);
   };
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const handleClick = (event: React.MouseEvent<unknown>, name: string) => {
     const selectedIndex = selected.indexOf(name);
@@ -315,6 +317,7 @@ export const UserTable: React.FunctionComponent = () => {
     setSelected(newSelected);
   };
 
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   const handleChangePage = (event: unknown, newPage: number) => {
     setPage(newPage);
