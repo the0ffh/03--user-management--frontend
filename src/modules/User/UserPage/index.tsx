@@ -4,7 +4,6 @@ import React from 'react';
 import api from './api';
 import { ReadUserDto } from '../../../../api';
 import { FormDialog } from '../UserFormDialog';
-import Button from '@mui/material/Button';
 import { makeStyles } from 'tss-react/mui';
 import { Header } from '../../core/Header';
 
@@ -23,22 +22,31 @@ const useStyles = makeStyles()(() => {
 export const UserPage: React.FunctionComponent = () => {
   const { classes } = useStyles();
   const [users, setUsers] = React.useState<ReadUserDto[]>();
+  const [refetch, setRefetch] = React.useState<boolean>(true);
 
   React.useEffect(() => {
-    api.userControllerFindAll().then(setUsers).catch(console.error);
-  }, [users]);
+    api
+      .userControllerFindAll()
+      .then(setUsers)
+      .catch(console.error)
+      .finally(() => {
+        setRefetch(false);
+      });
+  }, [refetch]);
 
   const handleDelete = async (userId: number) => {
     await api.userControllerRemove({ id: userId });
+    setRefetch(true);
   };
-
   return (
     <Page>
       <Header>
         <div className={classes.actionButtons}>
-          <FormDialog />
-          <div className={classes.spacer} />
-          <Button variant="outlined">delete</Button>
+          <FormDialog
+            onSubmit={() => {
+              setRefetch(true);
+            }}
+          />
         </div>
       </Header>
       {users ? (

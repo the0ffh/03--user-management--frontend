@@ -8,7 +8,11 @@ import DialogTitle from '@mui/material/DialogTitle';
 import { TextField } from '../../core/TextField';
 import api from '../UserPage/api';
 
-export const FormDialog: React.FunctionComponent = () => {
+interface Props {
+  onSubmit: () => void;
+}
+
+export const FormDialog: React.FunctionComponent<Props> = ({ onSubmit }) => {
   const [open, setOpen] = React.useState(false);
 
   const [firstName, setFirstName] = React.useState<string | null>(null);
@@ -33,9 +37,11 @@ export const FormDialog: React.FunctionComponent = () => {
             lastName,
           },
         })
+        .then(() => {
+          onSubmit();
+        })
         .catch(console.error);
     else throw Error('some prop(s) missing');
-
     closeDialog();
   };
 
