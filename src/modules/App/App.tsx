@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider } from '@mui/material/styles';
-import theme from '../theme';
+import theme from '../core/theme';
 import { CssBaseline } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
 import { UserPage } from '../User/UserPage';

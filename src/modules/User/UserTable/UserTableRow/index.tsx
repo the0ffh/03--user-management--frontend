@@ -1,11 +1,11 @@
 import TableRow from '@mui/material/TableRow';
 import TableCell from '@mui/material/TableCell';
-import { UserReturn } from '../../../../api';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
 import IconButton from '@mui/material/IconButton';
+import { ReadUserDto } from '../../../../../api';
 
 interface Props {
-  user: UserReturn;
+  user: ReadUserDto;
   onDelete: (userId: number) => void;
 }
 
