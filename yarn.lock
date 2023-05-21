@@ -828,6 +828,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/node@npm:^20.2.2":
+  version: 20.2.2
+  resolution: "@types/node@npm:20.2.2"
+  checksum: a39bef01b7592fd35c5704c74b9167c154a9a357017db8cd8644461c6e6ad87be19f82dfc65ecb2f35a8fb143fc8a0587f17507bc0b0c9bfee676b3fb4bc89ae
+  languageName: node
+  linkType: hard
+
 "@types/parse-json@npm:^4.0.0":
   version: 4.0.0
   resolution: "@types/parse-json@npm:4.0.0"
@@ -2976,6 +2983,7 @@ __metadata:
     "@mui/icons-material": ^5.11.16
     "@mui/material": ^5.13.1
     "@mui/x-data-grid": ^6.5.0
+    "@types/node": ^20.2.2
     "@types/react": ^18.0.28
     "@types/react-dom": ^18.0.11
     "@typescript-eslint/eslint-plugin": ^5.57.1
