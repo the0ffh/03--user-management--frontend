@@ -1,6 +1,6 @@
 # 03--user-management--frontend
 
-# important!!
+## Important!!
 Export `YARN_NODE_LINKER=node-modules` before any invocation of `yarn install/remove`
 
 e.g.
@@ -8,32 +8,60 @@ e.g.
 export YARN_NODE_LINKER=node-modules
 ```
 
-Reason - `typescript` version used is not patched yet for use with `pnp` yet
+Reason - used `typescript` version is still to be patched in order to use with `pnp`
 
-# set up local dev
+## Set up local dev
+Clone backend repository https://github.com/the0ffh/03--user-management--backend.
 
-clone backend repository and follow set up instructions, ref: https://github.com/the0ffh/03--user-management--backend  
-(spin up necessary container(s) and web server)
+Do use `dev` branch in both repos
 
-(use `dev` branch in both repos)
+- start backend (from within backend repo:)
+  - `docker compose up database -d`
+  - `yarn`
+  - `yarn start:dev`
+  - or (containerized backend)
+  - `docker compose up -d`
+- start frontend (from within frontend repo:)
+  - `yarn`
+  - `yarn start:dev`
+  - or (containerized)
+  - `docker compose up -d`
 
-Execute the following in the current repo:
-```bash
-yarn
+Frontend is accessible under `localhost:8080`
 
-yarn start:dev
+
+### Environment variables
+
+ref: [.env](.env)
+
+```dotenv
+VITE_API_HOST:  backend address
+VITE_API_PORT:  backend port
+VITE_PORT:      frontend port, defaults to 5172
+
+# needed to generate api
+# ref: https://openapi-generator.tech/
+OPENAPI_HOST:   backend address, accessible from docker, maps to host
+OPENAPI_PORT:   backend openapi port
+OPENAPI_PATH:   backend openapi path
 ```
 
-## update api
-repopulates [api](api) dir
+
+## Misc
+
+### API update
+
+Repopulates [api](api) dir using dockerized openapi generator  
+(using generator outside docker require java to be installed on dev machine)
+
 ref: https://openapi-generator.tech/
+
+Execute after modifying backend
 
 ```bash
 yarn api:generate
 ```
 
 
-# misc
-please do note: 
-> backend e2e testing suite is still a broken work in progress  
-> frontend testing suite does not come to live as of now
+### Notes
+frontend testing suite does not come to live as of now
