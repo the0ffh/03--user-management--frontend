@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
-import App from './modules/App/App.tsx';
+import App from './modules/App/App';
 /*
 use shell env in production -> vite preview (dockerized)
 ref: https://github.com/vitejs/vite/issues/3105

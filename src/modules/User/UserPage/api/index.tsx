@@ -1,5 +1,5 @@
 import { Configuration, UserApi } from '../../../../../api';
-import { apiHost, apiPort } from '../../../../config.ts';
+import { apiHost, apiPort } from '../../../../config';
 
 export default new UserApi(
   new Configuration({
