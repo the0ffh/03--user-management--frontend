@@ -1,0 +1,17 @@
+version: "3.4"
+services:
+  frontend:
+    image:  the0ffh/03-user-management-frontend:0.0.3
+    entrypoint: ["./run.sh"]
+    environment:
+      VITE_PORT: 8080
+      VITE_API_HOST:
+      VITE_API_PORT:
+    ports:
+      - "8080:8080"
+    networks:
+      - 03--user-management
+
+networks:
+  03--user-management:
+    external: true
