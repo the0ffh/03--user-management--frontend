@@ -1,7 +1,7 @@
 version: "3.4"
 services:
   frontend:
-    image:  the0ffh/03-user-management-frontend:0.0.3
+    build: .
     entrypoint: ["./run.sh"]
     environment:
       VITE_PORT: 8080
