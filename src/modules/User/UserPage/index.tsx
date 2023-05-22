@@ -6,6 +6,7 @@ import { ReadUserDto } from '../../../../api';
 import { FormDialog } from '../UserFormDialog';
 import { makeStyles } from 'tss-react/mui';
 import { Header } from '../../core/Header';
+import { Footer } from '../../core/Footer';
 
 const useStyles = makeStyles()(() => {
   return {
@@ -54,6 +55,7 @@ export const UserPage: React.FunctionComponent = () => {
       ) : (
         <div>LOADING...</div>
       )}
+      <Footer />
     </Page>
   );
 };
