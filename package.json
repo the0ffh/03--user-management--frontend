@@ -11,8 +11,9 @@
     "pre-commit": "lint-staged",
     "api:generate": "./api-generate.sh",
     "test": "vitest run",
+    "test:cov": "vitest run --coverage",
     "test:watch": "vitest watch",
-    "test:coverage": "vitest run --coverage"
+    "test:ts": "tsc"
   },
   "dependencies": {
     "@emotion/react": "^11.11.0",

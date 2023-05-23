@@ -10,9 +10,11 @@ export default ({ mode }) => {
     plugins: [react()],
     server: {
       ...(viteEnvs.VITE_PORT && { port: parseInt(viteEnvs.VITE_PORT, 10) }),
+      host: true,
     },
     preview: {
       ...(viteEnvs.VITE_PORT && { port: parseInt(viteEnvs.VITE_PORT, 10) }),
+      host: true,
     },
     test: {
       globals: true,

@@ -2,7 +2,7 @@
 - [x] theme
 - [ ] *grid
 - [ ] ** dockerize 
-  - [ ] do not build on deployment - set envs in index.html via `*.sh`  
+  - [x] do not build on deployment - set envs in index.html via `*.sh`  
   e.g. https://stackoverflow.com/questions/66372513/sed-replace-value-in-index-html-by-environment-variable-with-slashes-keeping-enc
   - [ ] reduce image size -> should result in ~450MB
 - [ ] *** testing!

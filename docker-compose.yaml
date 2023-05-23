@@ -2,7 +2,10 @@ version: "3.4"
 services:
   frontend:
     build: .
-    entrypoint: ["./run.sh"]
+    entrypoint: >
+      sh -c 'sed -i "s|%VITE_API_HOST%|$VITE_API_HOST|" dist/index.html &&
+      sed -i "s|%VITE_API_PORT%|$VITE_API_PORT|" dist/index.html &&
+      yarn vite preview --host'
     environment:
       VITE_PORT: 8080
       VITE_API_HOST:
