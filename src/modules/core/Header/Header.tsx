@@ -8,7 +8,7 @@ interface Props {
 const useStyles = makeStyles()((theme) => {
   return {
     root: {
-      padding: theme.spacing(4, 0),
+      padding: theme.spacing(3, 0),
       display: 'flex',
       justifyContent: 'end',
     },

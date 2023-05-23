@@ -1,11 +1,12 @@
-import { Page } from '../../core/Page';
-import { UserTable } from '../UserTable';
+import { Page } from '../../core/Page/Page';
+import { UserTable } from '../UserTable/UserTable';
 import React from 'react';
 import api from './api';
 import { ReadUserDto } from '../../../../api';
-import { FormDialog } from '../UserFormDialog';
+import { FormDialog } from '../UserFormDialog/UserFormDialog';
 import { makeStyles } from 'tss-react/mui';
-import { Header } from '../../core/Header';
+import { Header } from '../../core/Header/Header';
+import { Footer } from '../../core/Footer/Footer';
 
 const useStyles = makeStyles()(() => {
   return {
@@ -54,6 +55,7 @@ export const UserPage: React.FunctionComponent = () => {
       ) : (
         <div>LOADING...</div>
       )}
+      <Footer />
     </Page>
   );
 };

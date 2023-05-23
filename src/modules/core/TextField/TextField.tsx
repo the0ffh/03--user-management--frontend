@@ -9,7 +9,6 @@ interface Props {
   error?: boolean;
 }
 export const TextField: React.FunctionComponent<Props> = ({
-  id,
   label,
   type = 'text',
   variant = 'standard',
@@ -20,7 +19,6 @@ export const TextField: React.FunctionComponent<Props> = ({
     error={error}
     autoFocus
     margin="dense"
-    id={id}
     label={label}
     type={type}
     fullWidth

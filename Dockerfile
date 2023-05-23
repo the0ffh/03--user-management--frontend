@@ -12,11 +12,7 @@ COPY tsconfig.json ./
 COPY tsconfig.node.json ./
 COPY vite.config.ts ./
 COPY yarn.lock ./
-COPY run.sh ./
 
-RUN ls -al
-#ENV YARN_NODE_LINKER=node-modules
 RUN yarn install --silent --immutable
 
 EXPOSE 8080
-ENTRYPOINT ["./run.sh"]

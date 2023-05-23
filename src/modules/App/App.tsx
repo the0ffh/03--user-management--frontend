@@ -3,7 +3,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import theme from '../core/theme';
 import { CssBaseline } from '@mui/material';
 import { makeStyles } from 'tss-react/mui';
-import { UserPage } from '../User/UserPage';
+import { UserPage } from '../User/UserPage/UserPage';
 
 /*
  * mui tss react
